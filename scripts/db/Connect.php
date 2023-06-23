@@ -4,7 +4,7 @@ namespace App;
 use PDO;
 
 class Connect extends Credentials{
-    protected $conn;
+    public $conn;
     function __construct(private string $dsn = 'mysql', private string $port = '3306')
     {
         try{
@@ -15,7 +15,6 @@ class Connect extends Credentials{
         }
     }
 }
-
 
 ?>
 
