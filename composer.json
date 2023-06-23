@@ -1,0 +1,17 @@
+{
+    "name": "apolt01-063/conexion-pdoclase",
+    "description": "..",
+    "license": "LTS",
+    "autoload": {
+        "psr-4": {
+            "App\\": ["./scripts", "./scripts/db"]
+        }
+    },
+    "authors": [
+        {
+            "name": "dVera17",
+            "email": "dsvera174@gmail.com"
+        }
+    ],
+    "require": {}
+}
