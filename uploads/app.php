@@ -12,6 +12,19 @@ $router->get("/camper", function(){
     // print_r(file_get_contents("php://input"));
 });
 
+$router->post("/camper", function(){
+    $_DATA = json_decode(file_get_contents("php://input"), true);
+    $conn = new \App\Connect();
+    $res = $conn->conn->prepare("INSERT INTO tb_camper(nombre, edad) VALUES(:name, :age)");
+    $res->bindValue('name', $_DATA['name']);
+    $res->bindValue('age', $_DATA['age']);
+    $res->execute();    
+    $res = $res->rowCount();
+    echo json_encode($res);
+    // print_r(file_get_contents("php://input"));
+});
+
+
 $router->put("/camper", function(){
     $_DATA = json_decode(file_get_contents("php://input"), true);
     $conn = new \App\Connect();
@@ -33,6 +46,8 @@ $router->delete("/camper", function(){
     echo json_encode($res);
     // print_r(file_get_contents("php://input"));
 });
+
+
 
 $router->run();
 

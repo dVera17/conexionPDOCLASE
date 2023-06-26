@@ -9,7 +9,6 @@ class Connect extends Credentials{
     {
         try{
             $this->conn = new \PDO($this->dsn.":host=".$this->__get('host').";dbname=".$this->__get('dbname')."; user=".$this->username."; password=".$this->__get('password')."; port=".$this->port);
-            print_r('success');
         } catch (\PDOException $e){
             print_r($e->getMessage());
         }
